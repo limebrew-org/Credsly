@@ -6,14 +6,14 @@ To setup the project locally, `Docker` with `Docker Compose` is the preferred wa
 
 - Run Locally:
 
-    docker compose -f docker-compose.local.yml up -d
+        docker compose -f docker-compose.local.yml up -d
 
-    # To stop:
-    docker compose -f docker-compose.local.yml down
+        # To stop:
+        docker compose -f docker-compose.local.yml down
 
 - Run in Production version:
 
-    docker compose -f docker-compose.yml up -d
+        docker compose -f docker-compose.yml up -d
 
-    # To stop:
-    docker compose -f docker-compose.yml down
+        # To stop:
+        docker compose -f docker-compose.yml down
