@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: credsly_frontend_prod
+    image: credsly_frontend_prod
+    build:
+      dockerfile: Dockerfile
+      context: frontend
+    
+    networks:
+      - credsly_prod_network
+
+    ports:
+      - 8000:80
+  
+  backend:
+    container_name: credsly_backend_prod
+    image: credsly_backend_prod
+    build:
+      dockerfile: Dockerfile
+      context: backend
+
+    networks:
+      - credsly_prod_network
+    
+    ports:
+      - 8080:8080
+
+networks:
+  credsly_prod_network: {}

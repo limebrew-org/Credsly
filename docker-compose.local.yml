@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: credsly_frontend
+    build:
+      dockerfile: Dockerfile.local
+      context: frontend
+    
+    networks:
+      - credsly_network
+
+    ports:
+      - 3000:3000
+    
+    volumes:
+      - "./frontend/src:/app/src"
+  
+  backend:
+    container_name: credsly_backend
+    build:
+      dockerfile: Dockerfile.local
+      context: backend
+
+    networks:
+      - credsly_network
+    
+    ports:
+      - 8080:8080
+    
+    volumes:
+      - "./backend/credsly:/app/credsly"
+
+
+networks:
+  credsly_network: {}
